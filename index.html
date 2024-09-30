@@ -1,12 +1,108 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script> 
+
+<!-- custom css  -->
+ <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body   class="bg-no-repeat bg-center font-poppins min-h-screen bg-[#010313] bg-[url(image/images/background.png)]">
+   <main >
+    <!-- Home section  -->
+    <section id="home-screen" class=" min-h-screen  text-white font-anton flex flex-col justify-center items-center ">
+        <div class="flex flex-col items-center gap-10"> 
+            <h1 class="text-7xl uppercase ">Alphabet clash</h1>
+            <p>Unleash Your Keyboard Kungfu:Press "Enter" to play</p>
+            <button  onclick="play()" class="btn btn bg-white text-black">Play</button></div>
+    </section>
+    <!-- play ground start  -->
+    <section id="play-ground" class=" flex flex-col justify-center items-center min-h-screen hidden ">
+        <!-- screen -->
+        <div class="flex justify-center items-center mb-10 artboard artboard-horizontal phone-6 border-[20px] rounded-2xl border-[#010313CC] bg-[#FFFFFFB3]">
+          <h1 id="screen-text" class=" font-bold text-8xl text-center text-black"></h1>
+        </div>
+         <!-- keyboard start  -->
+        <div >
+            <div class="my-1 flex w-full justify-center gap-1">
+                <kbd id="q" class="kbd">q</kbd>
+                <kbd id="w" class="kbd">w</kbd>
+                <kbd id="e" class="kbd">e</kbd>
+                <kbd id="r" class="kbd">r</kbd>
+                <kbd id="t" class="kbd">t</kbd>
+                <kbd id="y" class="kbd">y</kbd>
+                <kbd id="u" class="kbd">u</kbd>
+                <kbd id="i" class="kbd">i</kbd>
+                <kbd id="o" class="kbd">o</kbd>
+                <kbd id="p" class="kbd">p</kbd>
+              </div>
+        </div>
+          <div class="my-1 flex w-full justify-center gap-1">
+            <kbd id="a"  class="kbd ">a</kbd>
+            <kbd id="s" class="kbd">s</kbd>
+            <kbd id="d" class="kbd">d</kbd>
+            <kbd id="f" class="kbd">f</kbd>
+            <kbd id="g" class="kbd">g</kbd>
+            <kbd id="h" class="kbd">h</kbd>
+            <kbd id="j" class="kbd">j</kbd>
+            <kbd id="k" class="kbd">k</kbd>
+            <kbd id="l" class="kbd">l</kbd>
+          </div>
+          <div class="my-1 flex w-full justify-center gap-1">
+            <kbd id="z" class="kbd">z</kbd>
+            <kbd id="x" class="kbd">x</kbd>
+            <kbd id="c" class="kbd">c</kbd>
+            <kbd id="v" class="kbd">v</kbd>
+            <kbd id="b" class="kbd">b</kbd>
+            <kbd id="n" class="kbd">n</kbd>
+            <kbd id="m" class="kbd">m</kbd>
+           
+          </div>
+          
+          <!-- keyboard end  -->
+
+          <!-- life and score showing board  -->
+          
+         <div class="flex justify-around items-center gap-14 mt-5 mx-[100px]">
+            <button class="btn rounded-full bg-[#894189]">
+              Life
+                <img src="image/images/Group 23.svg" alt="">
+                <span>1</span>
+              </button>
+              <button class="btn rounded-full bg-[#360490]">
+                Score
+               <img src="image/images/monetization_on.svg" alt="">
+                <span>1</span>
+              </button>
+         </div>
+
+        </div>
+    </section>
+
+    <!-- score part  -->
     
+    <section class="score flex justify-center items-center min-h-screen  hidden ">
+      <div class="text-white text-center bg-[#ffffff33] space-y-6 rounded-lg p-4">
+        
+          <h1 class="text-8xl">
+            Score : <span>14</span>
+          </h1>
+          <button class="btn text-black bg-[#ffffff]">Play Again</button>
+          <p>Practice Will Make You Pro </p>
+        </div>
+      
+    </section>
+    <footer class="text-[#ffffff] font-anton flex justify-center  items-center">
+      <h1 class="text-center pb-5 text-sm ">Recreated By JaatCoder Sompod || 2024</h1>
+     </footer>
+   </main>
+   
+    <script src="script.js">
+
+    </script>
 </body>
 </html>
