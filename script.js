@@ -49,6 +49,7 @@ function handleKeyboardUpevent(event){
         finalScore.innerText = newScore;
 
          play();
+
     }
     else
     {
