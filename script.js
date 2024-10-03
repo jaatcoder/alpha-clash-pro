@@ -25,7 +25,9 @@ return alphabet[randomNumber];
 
 }
 function handleKeyboardUpevent(event){
+
     const typedKey = event.key;
+    
 
    const currentKeyElement = document.getElementById('screen-text');
   const  currentKey= currentKeyElement.innerText;
@@ -40,8 +42,11 @@ function handleKeyboardUpevent(event){
         const currentScoreText= currentScoreELement.innerText;
         const currentScore = parseInt(currentScoreText);
 
-        const newScore = currentScore + 1;
+        const newScore = currentScore + 1 ;
         currentScoreELement.innerText = newScore;
+
+        const finalScore = document.getElementById('final-score');  
+        finalScore.innerText = newScore;
 
          play();
     }
@@ -52,13 +57,41 @@ function handleKeyboardUpevent(event){
         const currentLife = parseInt(currentLifeText);
         const newLife = currentLife - 1;
         currentLifeELement.innerText = newLife;
+        if(newLife === 0){
+            const playGround = document.getElementById('play-ground');
+            playGround.classList.add('hidden');
+            const gameOver = document.getElementById('game-over');
+            gameOver.classList.remove('hidden');
+
+           
+        }
+
     }
+   
 
     
 }
 
 document.addEventListener('keyup', handleKeyboardUpevent)
 
+
+function newGame()
+{
+    const playGround = document.getElementById('play-ground');
+    playGround.classList.remove('hidden');
+    const gameOverSection = document.getElementById('game-over');
+    gameOverSection.classList.add('hidden');
+    const finalScore = document.getElementById('current-score');  
+    finalScore.innerText = 0 ;
+    const currentLifeELement = document.getElementById('life-text')
+     currentLifeELement.innerText= 6;
+     const currentKeyElement = document.getElementById('screen-text');
+     const  currentKey= currentKeyElement.innerText;
+      const expectedKey = currentKey.toLowerCase();
+     removeBackgroundcolorById(expectedKey)
+     play();
+
+}
 
 function play()
 {
